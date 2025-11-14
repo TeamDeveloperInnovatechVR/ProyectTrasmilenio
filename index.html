@@ -2,19 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>transmilenio hpta</title>
+    <title>Redirigiendo...</title>
     <style>
         body {
-            background-color: red;
-            color: green;
+            background-color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #222;
             font-size: 40px;
+        }
+        .contador {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>transmilenio hpta</h1>
+
+    <div>
+        Redirigiendo a la experiencia en <span class="contador">3</span>...
+    </div>
+
+    <script>
+        let contador = 3;
+        const elemento = document.querySelector(".contador");
+
+        const intervalo = setInterval(() => {
+            contador--;
+            elemento.textContent = contador;
+
+            if (contador === 0) {
+                clearInterval(intervalo);
+                window.location.href = "https://www.youtube.com"; // Cambia la URL aquí
+            }
+        }, 1000);
+    </script>
+
 </body>
 </html>
